@@ -1,0 +1,28 @@
+{
+    "debug": false,
+    "projects": [
+        {
+            "owner": "gympass",
+            "repos": [
+                "arkham",
+                "arkham-chart",
+                "wellz-be-hr-dashboard"
+            ],
+            "squads": [
+                {
+                    "name": "Cupcake",
+                    "engineers": [
+                        "felipeviannagympass"
+                    ]
+                }
+            ]
+        }
+    ],
+    "github": {
+        "access_token": "[ACCESS_TOKEN]"
+    },
+    "database": {
+        "db_path": "./pull_request.db",
+        "migrations_path": "db/migrations"
+    }
+}

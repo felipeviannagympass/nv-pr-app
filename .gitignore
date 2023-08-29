@@ -1,0 +1,5 @@
+bin
+configs/envs.json
+vendor
+pull_request.db
+.vscode

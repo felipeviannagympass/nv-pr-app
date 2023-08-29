@@ -1,0 +1,12 @@
+version: 2
+sql:
+  - engine: "sqlite"
+    queries: "internal/pull_request/repository/queries/queries.sql"
+    schema: "db/migrations"
+    gen:
+      go:
+        package: "repository"
+        out: "internal/pull_request/repository/"
+        emit_interface: true
+        output_querier_file_name: "interface"
+        emit_prepared_queries: true
