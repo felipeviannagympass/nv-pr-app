@@ -2,10 +2,8 @@ package nvhttp
 
 import (
 	"encoding/json"
-	"fmt"
 	"io"
 	"net/http"
-	"net/http/httputil"
 )
 
 type Method string
@@ -59,12 +57,12 @@ func (n *Nvhttp) Get(url string) (*http.Response, error) {
 	req.Header.Add("Authorization", "Bearer "+n.token)
 	req.Header.Add("Content-Type", "application/json") // Define o tipo de conteúdo do corpo
 
-	requestDump, err := httputil.DumpRequestOut(req, true)
-	if err != nil {
-		return nil, err
-	}
-	fmt.Println("Requisição:")
-	fmt.Println(string(requestDump))
+	// requestDump, err := httputil.DumpRequestOut(req, true)
+	// if err != nil {
+	// 	return nil, err
+	// }
+	// fmt.Println("Requisição:")
+	// fmt.Println(string(requestDump))
 
 	// Faz a requisição HTTP
 	resp, err := client.Do(req)

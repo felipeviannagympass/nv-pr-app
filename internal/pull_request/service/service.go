@@ -43,6 +43,11 @@ func (p *PullRequestService) NotifyPullRequests(ctx context.Context) error {
 			return err
 		}
 
+		err = beeep.Alert("Alerta Pull Request", pr.Repository, "ic_launcher_foreground.png")
+		if err != nil {
+			return err
+		}
+
 		err = p.querier.SetNotified(ctx, repository.SetNotifiedParams{
 			ID:        pr.ID,
 			UpdatedAt: p.now(),
@@ -116,4 +121,12 @@ func (p *PullRequestService) createPullRequest(ctx context.Context, owner, repo 
 		return err
 	}
 	return nil
+}
+
+func (p *PullRequestService) ListPullRequests(ctx context.Context, owner, repo string) ([]model.PullRequest, error) {
+	pullRequests, err := p.github.ListPr(owner, repo)
+	if err != nil {
+		return nil, err
+	}
+	return pullRequests, nil
 }

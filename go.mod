@@ -3,10 +3,12 @@ module nv-pr-app
 go 1.21
 
 require (
+	fyne.io/systray v1.10.0
 	github.com/gen2brain/beeep v0.0.0-20230812223410-3e1549ef0811
 	github.com/golang-migrate/migrate/v4 v4.16.2
 	github.com/kelseyhightower/envconfig v1.4.0
 	github.com/mattn/go-sqlite3 v1.14.17
+	go.uber.org/zap v1.26.0
 )
 
 require (
@@ -20,7 +22,9 @@ require (
 	github.com/nu7hatch/gouuid v0.0.0-20131221200532-179d4d0c4d8d // indirect
 	github.com/remyoudompheng/bigfft v0.0.0-20200410134404-eec4a21b6bb0 // indirect
 	github.com/tadvi/systray v0.0.0-20190226123456-11a2b8fa57af // indirect
+	github.com/tevino/abool v1.2.0 // indirect
 	go.uber.org/atomic v1.7.0 // indirect
+	go.uber.org/multierr v1.10.0 // indirect
 	golang.org/x/mod v0.10.0 // indirect
 	golang.org/x/sys v0.11.0 // indirect
 	golang.org/x/tools v0.9.1 // indirect
