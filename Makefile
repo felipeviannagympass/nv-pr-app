@@ -1,5 +1,6 @@
 GOCMD=go
 GOBUILD=$(GOCMD) build
+GOMOD=$(GOCMD) mod
 BINARY_DIR=bin
 BINARY_NAME=app
 CONFIG_DIR=configs
@@ -32,3 +33,8 @@ bindir:
 .PHONY: build
 build: bindir
 	$(PKG_CFG_PATH) $(GOBUILD_VARS) $(GOBUILD) $(GOBUILD_PARAMS) -o $(BINARY_DIR)/$(BINARY_NAME) ./cmd/app
+
+.PHONY: deps
+deps:
+	$(GOMOD) tidy
+	$(GOMOD) vendor
